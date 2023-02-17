@@ -327,12 +327,12 @@ SpriteRenderer:
   m_SortingLayerID: -1890129425
   m_SortingLayer: -1
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 7043a0d2a91467c4cbdb4310294f3e54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 405dd783766dd3b42988c5f73647fdc0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 164.6, y: 10.125}
+  m_Size: {x: 173.3, y: 40.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -568,12 +568,12 @@ SpriteRenderer:
   m_SortingLayerID: -1890129425
   m_SortingLayer: -1
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: e55074e5a9ea9314db30ac8f688f71b8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 39c8fa9992852384f89e24a75c960a12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 164.6, y: 10.125}
+  m_Size: {x: 173.3, y: 40.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1514,10 +1514,9 @@ MonoBehaviour:
   input_activation_strength: 0.2
   speed_base_floor: 7
   jump_strength_base: 13
+  gravity_base: 30
+  gravity_jumping: 20
   coyote_time: 0.2
-  jump_buffer_time: 3
-  jump_ienumerator_callback_time: 0.2
-  jump_falloff: 0.5
   ground_layer:
     serializedVersion: 2
     m_Bits: 256
@@ -1538,11 +1537,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2.4
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: a14462f36171f1e4a8669598c3a28f5b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1821509019
 MonoBehaviour:
@@ -1714,12 +1713,12 @@ SpriteRenderer:
   m_SortingLayerID: -1890129425
   m_SortingLayer: -1
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 64d660a2aa78c394293147ab29c4485f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f42d87ec483b57f48bf96818a7fc0f48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 164.6, y: 10.125}
+  m_Size: {x: 173.3, y: 40.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
