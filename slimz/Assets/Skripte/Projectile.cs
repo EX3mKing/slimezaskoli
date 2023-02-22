@@ -34,12 +34,24 @@ public class Projectile : MonoBehaviour
         if(alive_time_cur <= 0) Destroy(gameObject);
     }
 
+    // just here if projectile is a physics obj
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.transform.CompareTag("Player"))
         {
             Debug.Log("Hit player");
             col.transform.SendMessage("TakeDMG", damage);
+        }
+        Destroy(gameObject);
+    }
+
+    // this is normally used
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.transform.parent.parent.CompareTag("Player"))
+        {
+            Debug.Log("Hit at: " + col.name);
+            col.transform.parent.parent.SendMessage("TakeDMG", damage);
         }
         Destroy(gameObject);
     }

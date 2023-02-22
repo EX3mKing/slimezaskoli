@@ -26,11 +26,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        
-    }
-
     #region audio
 
     public void PlaySFX(AudioClip clip)

@@ -319,8 +319,9 @@ GameObject:
   - component: {fileID: 165778736}
   - component: {fileID: 165778735}
   - component: {fileID: 165778734}
+  - component: {fileID: 165778737}
   m_Layer: 0
-  m_Name: Square
+  m_Name: DeathWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,6 +420,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &165778737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165778733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e94f90db42b3db145a401f947e60f584, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 1000
 --- !u!1 &177622218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1540,6 +1554,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 923437672}
+  image: {fileID: 390570448}
+  sprite_on: {fileID: 21300000, guid: f960f590887e9134790808df8f31ecb6, type: 3}
+  sprite_off: {fileID: 21300000, guid: ddb37aa71b3979c4b824c7672bd4def3, type: 3}
 --- !u!114 &923437672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1921,6 +1938,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1228517322}
+  image: {fileID: 262337428}
+  sprite_on: {fileID: 21300000, guid: 9fd638ca97bfa0f45803af56e7a8cba6, type: 3}
+  sprite_off: {fileID: 21300000, guid: 972cebd47bdab9240846902949eda2cb, type: 3}
 --- !u!224 &1228517324
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3561,6 +3581,7 @@ GameObject:
   - component: {fileID: 1879764316}
   - component: {fileID: 1879764315}
   - component: {fileID: 1879764317}
+  - component: {fileID: 1879764318}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3628,6 +3649,22 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
+--- !u!114 &1879764318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1879764313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6640cd3ae56e9449993dcd2c926d073, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliders:
+  - {fileID: 1228517321}
+  - {fileID: 2039252422}
+  - {fileID: 923437669}
 --- !u!1 &1891786806
 GameObject:
   m_ObjectHideFlags: 0
@@ -4849,6 +4886,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2039252423}
+  image: {fileID: 774648043}
+  sprite_on: {fileID: 21300000, guid: 7e570dc4ea894124e8b7717f1a31dddb, type: 3}
+  sprite_off: {fileID: 21300000, guid: 5df58d081c035c24b80acc870bebcdd0, type: 3}
 --- !u!224 &2039252425
 RectTransform:
   m_ObjectHideFlags: 0

@@ -21,7 +21,6 @@ public class Turret : MonoBehaviour
 
         if (current_time > time_between_shoots)
         {
-            Debug.Log("Shoot");
             current_time = 0f;
 
             GameObject temp_arrow = Instantiate(Arrow_reference, transform.position, transform.rotation);

@@ -51,6 +51,7 @@ MonoBehaviour:
   gravity: {x: 0, y: 0}
   alive_time: 3
   damage: 1
+  velocity_falloff: 0
 --- !u!212 &7910891353855200662
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -134,7 +135,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
