@@ -8,6 +8,7 @@ public class ButtonFunctions : MonoBehaviour
     public void QuitApp()
     {
         Application.Quit();
+        Debug.Log("Quit");
     }
 
     public void LoadSceneByName(string name)

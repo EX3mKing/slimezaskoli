@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,7 +25,11 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    private void Update()
+    {
+        
+    }
 
     #region audio
 
@@ -51,6 +56,16 @@ public class GameManager : MonoBehaviour
     public void ChangeSFXVolume(float value)
     {
         sfx_source.volume = value;
+    }
+
+    #endregion
+
+    #region death
+
+    public void Loose(string reason)
+    {
+        SceneManager.LoadScene(2);
+        Debug.Log(reason);
     }
 
     #endregion
