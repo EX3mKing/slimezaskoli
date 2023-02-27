@@ -20,4 +20,9 @@ public class ButtonFunctions : MonoBehaviour
     {
         SceneManager.LoadScene(index);
     }
+
+    public void SetTimeScale(float scale)
+    {
+        Time.timeScale = scale;
+    }
 }
