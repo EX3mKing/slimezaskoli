@@ -122,4 +122,11 @@ public class Spear : MonoBehaviour
             }
         }
     }
+
+    public void Follow()
+    {
+        thrown = false;
+        follow = true;
+        col.enabled = false;
+    }
 }
