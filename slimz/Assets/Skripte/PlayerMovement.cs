@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     
     private PlayerInputActions input_map;
     private InputAction movement;
-    private Vector2 input_move_direction;
+    public Vector2 input_move_direction;
     private float coyote_time_current;
     
     private bool hitting_base;

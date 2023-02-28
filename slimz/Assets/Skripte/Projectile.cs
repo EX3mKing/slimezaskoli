@@ -48,7 +48,7 @@ public class Projectile : MonoBehaviour
     // this is normally used
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.transform.parent.parent.CompareTag("Player"))
+        if (col.transform.CompareTag("Player"))
         {
             Debug.Log("Hit at: " + col.name);
             col.transform.parent.parent.SendMessage("TakeDMG", damage);
