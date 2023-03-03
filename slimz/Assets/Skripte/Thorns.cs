@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Thorns : MonoBehaviour
 {
-    [SerializeField] private float dmg;
+    [SerializeField] private int dmg;
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.transform.CompareTag("Player"))

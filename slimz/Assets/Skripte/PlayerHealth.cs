@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
         if (invincible_current > 0) invincible_current -= Time.deltaTime;
     }
 
-    public void TakeDMG(int dmg)
+    public void TakeDMG(int dmg, string type)
     {
         if (invincible_current <= 0f)
         {
@@ -38,13 +38,9 @@ public class PlayerHealth : MonoBehaviour
             }
             else
             {
-                Die();
+                GameManager.Instance.Loose("Died of: " + type);
+                GameManager.Instance.death_reason = type;
             }
         }
-    }
-
-    private void Die()
-    {
-        GameManager.Instance.Loose("Taken Too Much Damage");
     }
 }

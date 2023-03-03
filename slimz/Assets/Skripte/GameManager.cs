@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public AudioSource music_source, sfx_source;
+    public string death_reason = "null";
 
     private void Awake()
     {
@@ -59,6 +60,7 @@ public class GameManager : MonoBehaviour
 
     public void Loose(string reason)
     {
+        death_reason = reason;
         SceneManager.LoadScene(2);
         Debug.Log(reason);
     }
