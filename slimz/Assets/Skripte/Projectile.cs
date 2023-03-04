@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     public Vector2 velocity_initial;
     public Vector2 gravity;
     public float alive_time;
-    public int damage;
+    public DMG damage;
     public float velocity_falloff;
 
     private float alive_time_cur;

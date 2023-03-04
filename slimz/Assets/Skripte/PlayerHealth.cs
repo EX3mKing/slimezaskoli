@@ -22,13 +22,13 @@ public class PlayerHealth : MonoBehaviour
         if (invincible_current > 0) invincible_current -= Time.deltaTime;
     }
 
-    public void TakeDMG(int dmg, string type)
+    public void TakeDMG(DMG dmg)
     {
         if (invincible_current <= 0f)
         {
-            if (health_current - dmg > 0)
+            if (health_current - dmg.dmg > 0)
             {
-                health_current -= dmg;
+                health_current -= dmg.dmg;
                 invincible_current = invincible_duration;
 
                 for (int i = health_max; i > health_current; i--)
@@ -38,8 +38,8 @@ public class PlayerHealth : MonoBehaviour
             }
             else
             {
-                GameManager.Instance.Loose("Died of: " + type);
-                GameManager.Instance.death_reason = type;
+                GameManager.Instance.Loose("Died of: " + dmg.type);
+                GameManager.Instance.death_reason = dmg.type;
             }
         }
     }

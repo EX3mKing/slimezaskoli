@@ -50,7 +50,9 @@ MonoBehaviour:
   velocity_initial: {x: 4, y: 0}
   gravity: {x: 0, y: 0}
   alive_time: 3
-  damage: 1
+  damage:
+    dmg: 1
+    type: arrow
   velocity_falloff: 0
 --- !u!212 &939401779194204769
 SpriteRenderer:

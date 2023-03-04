@@ -66,4 +66,13 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
+
+    #region win
+
+    public void Win()
+    {
+        SceneManager.LoadScene("Win");
+    }
+
+    #endregion
 }

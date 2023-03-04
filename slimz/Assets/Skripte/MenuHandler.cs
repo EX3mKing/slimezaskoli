@@ -15,7 +15,9 @@ public class MenuHandler : MonoBehaviour
     [SerializeField] private GameObject weapon_switch_target;
 
     [SerializeField] private GameObject volume_select;
-    [SerializeField] private GameObject weapon_select;
+    
+    [SerializeField] private GameObject[] weapon_object;
+    [SerializeField] private GameObject[] weapon_select;
 
     [SerializeField] private GameObject event_system_object;
     private EventSystem event_system;
@@ -65,19 +67,26 @@ public class MenuHandler : MonoBehaviour
             else
             {
                 EnableSwitch();
-                event_system.SetSelectedGameObject(weapon_select);
+                bool missing = true;
+                for(int i = 0; i < weapon_object.Length; i++)
+                {
+                    if (weapon_object[i].activeSelf)
+                    {
+                        event_system.SetSelectedGameObject(weapon_select[i]);
+                        missing = false;
+                    }
+                }
+                if(missing) event_system.SetSelectedGameObject(weapon_select[0]);
             }
         }
     }
-
-    // USE ONLY FOR VOLUME
+    
     public void DisableObject()
     {
         volume_target.SetActive(false);
         Time.timeScale = 1f;
     }
-
-    // USE ONLY FOR VOLUME - nezelim nista u sceni zeznut
+    
     public void EnableObject()
     {
         volume_target.SetActive(true);

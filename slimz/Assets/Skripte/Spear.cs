@@ -46,9 +46,9 @@ public class Spear : MonoBehaviour
 
     private void Update()
     {
-        if (!thrown)
+        if (!thrown && Time.timeScale > 0f)
         {
-            if (input_movement.input_move_direction.x > 0f)
+            if (input_movement.input_move_direction.x > 0.125f)
             {
                 transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
             }

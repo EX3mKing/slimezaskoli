@@ -12,7 +12,7 @@ public class Turret : MonoBehaviour
     public Vector2 velocity_initial;
     public Vector2 gravity;
     public float alive_time;
-    public int damage;
+    public DMG damage;
     public float velocity_falloff;
 
     private void FixedUpdate()
