@@ -308,7 +308,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -352,7 +352,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""4416d9c9-5adf-43ac-a3d7-3dc68a7ceb69"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -362,8 +362,8 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ea7c9a51-abdd-48e8-ac53-abe1752069f8"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""id"": ""2eb3675b-5e00-4f11-89be-d19860c39e30"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -418,7 +418,7 @@ public partial class @PlayerInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b006eb0d-f97c-4a2c-8faf-eb89b1cba925"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/shift"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
