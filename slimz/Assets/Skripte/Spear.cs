@@ -27,6 +27,8 @@ public class Spear : MonoBehaviour
 
     private float manual_callback_cur;
 
+    [SerializeField] private AudioClip throw_clip;
+
     private void Awake()
     {
         col = GetComponent<BoxCollider2D>();
@@ -74,6 +76,7 @@ public class Spear : MonoBehaviour
                     thrown = true;
                     velocity = new Vector3(input_movement.input_move_direction.x * speed_throw, 0f, 0f);
                     manual_callback_cur = manual_callback;
+                    GameManager.Instance.PlaySFX(throw_clip);
                 }
                 else if(input_movement.input_move_direction.x == 0f)
                 {
@@ -82,6 +85,7 @@ public class Spear : MonoBehaviour
                     velocity = (transform.localScale.x > 0) ? new Vector3(-speed_throw, 0f, 0f) :
                         new Vector3(speed_throw, 0f, 0f);
                     manual_callback_cur = manual_callback;
+                    GameManager.Instance.PlaySFX(throw_clip);
                 }
             }
         }

@@ -26,4 +26,14 @@ public class ButtonFunctions : MonoBehaviour
     {
         Time.timeScale = scale;
     }
+
+    public void PlaySfx(AudioClip clip)
+    {
+        GameManager.Instance.PlaySFX(clip);
+    }
+
+    public void PlayMusic(AudioClip clip)
+    {
+        GameManager.Instance.PlayMusic(clip);
+    }
 }

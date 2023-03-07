@@ -17,6 +17,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float invincible_duration;
     private float invincible_current;
 
+    [SerializeField] private AudioClip hurt_clip;
+
     private void Update()
     {
         if (invincible_current > 0) invincible_current -= Time.deltaTime;
@@ -35,6 +37,8 @@ public class PlayerHealth : MonoBehaviour
                 {
                     hearths[i-1].sprite = empty_hearth;
                 }
+                
+                GameManager.Instance.PlaySFX(hurt_clip);
             }
             else
             {

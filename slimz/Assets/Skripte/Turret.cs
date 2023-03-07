@@ -14,6 +14,26 @@ public class Turret : MonoBehaviour
     public float alive_time;
     public DMG damage;
     public float velocity_falloff;
+    public AudioClip spawn_audio;
+    public float audio_radius;
+
+    private GameObject player;
+    private bool player_found;
+
+    private void Start()
+    {
+        try
+        {
+            player = GameObject.Find("Player");
+            player_found = true;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            Debug.Log($"player not found");
+            throw;
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -30,6 +50,12 @@ public class Turret : MonoBehaviour
             temp_projectile.velocity_initial = velocity_initial;
             temp_projectile.damage = damage;
             temp_projectile.velocity_falloff = velocity_falloff;
+
+            if (player_found)
+            {
+                if(Vector3.Distance(player.transform.position, gameObject.transform.position) < audio_radius)
+                    GameManager.Instance.PlaySFX(spawn_audio);
+            }
         }
     }
 }

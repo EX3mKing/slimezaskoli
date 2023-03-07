@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private BoxCollider2D collider_floor;
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer renderer;
+    [SerializeField] private AudioClip jump_clip;
     
     
     private Rigidbody2D player_rb;
@@ -56,9 +57,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        // read the input direction and bind it to 1,1 0,1 1,0 0,0.. format
+        // read the input direction and bind it to 11, 10, 01, 00.. format
         input_move_direction = movement.ReadValue<Vector2>();
 
+        // activation strength is kinda useless bcs of new input system, can just replace with 0f
         if (input_move_direction.x > input_activation_strength) input_move_direction.x = 1f;
         if (input_move_direction.x < -input_activation_strength) input_move_direction.x = -1f;
         if (input_move_direction.y > input_activation_strength) input_move_direction.y = 1f;
@@ -73,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
         hitting_base = ColliderCheck(collider_base, ground_layer);
         hitting_floor = ColliderCheck(collider_floor, ground_layer);
         
+        // animation and sprite
         animator.SetBool("Grounded", hitting_base && hitting_floor);
         animator.SetBool("Moving", Mathf.Abs(input_move_direction.x) > 0f);
         animator.SetBool("Falling", last_height > player_rb.position.y);
@@ -80,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
         if (input_move_direction.x < 0f) renderer.flipX = false;
         if (input_move_direction.x > 0f) renderer.flipX = true;
         
+        // coyote time
         if (hitting_base && hitting_floor)
         {
             coyote_time_current = coyote_time;
@@ -88,13 +92,16 @@ public class PlayerMovement : MonoBehaviour
         {
             if (coyote_time_current > 0f) coyote_time_current -= Time.fixedDeltaTime;
         }
-
+        
+        // actual jump
         if ( coyote_time_current > 0f && input_move_direction.y > 0f)
         {
             player_rb.AddForce(Vector2.up * jump_strength_base, ForceMode2D.Impulse);
             coyote_time_current = 0f;
+            GameManager.Instance.PlaySFX(jump_clip);
         }
-
+        
+        // basically fall
         if (!(hitting_base && hitting_floor))
         {
             if (input_move_direction.y > 0f)
@@ -109,8 +116,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
+        // needed for animation
         last_height = transform.position.y;
         
+        // moves left or right
         player_rb.velocity = new Vector2(input_move_direction.x * speed_base_floor, player_rb.velocity.y);
     }
 
